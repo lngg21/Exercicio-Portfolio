@@ -1,0 +1,232 @@
+/* Configurações Gerais / Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth; /* Deixa a rolagem suave ao clicar no menu */
+}
+
+body {
+  background-color: #0b0b0d; /* Preto de fundo moderno */
+  color: #f3f3f3;
+  overflow-x: hidden;
+}
+
+/* Header / Menu de Navegação */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: rgba(11, 11, 13, 0.8);
+  border-bottom: 1px solid #2d1b4e;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Efeito de vidro borrado */
+}
+
+header .nome h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+header .nome h1::after {
+  content: ".";
+  color: #8a2be2; /* Ponto roxo no final do nome */
+}
+
+header ul {
+  display: flex;
+  gap: 30px;
+}
+
+header ul li a {
+  color: #a5a5a5;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+header ul li a:hover {
+  color: #a855f7; /* Roxo brilhante no hover */
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Espaçamento para o conteúdo não ficar sob o header fixo */
+main {
+  margin-top: 80px;
+}
+
+/* Seção: Home */
+.Home {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  gap: 40px;
+}
+
+.content-text {
+  max-width: 600px;
+}
+
+.its-me h3 {
+  font-size: 1.2rem;
+  color: #a5a5a5;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.its-me .name {
+  display: inline;
+  font-size: 2.5rem;
+  color: #a855f7; /* Roxo em destaque */
+  font-weight: 800;
+}
+
+.social-media {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-media a {
+  padding: 10px 24px;
+  border: 2px solid #8a2be2;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.social-media a:hover {
+  background-color: #8a2be2;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+  transform: translateY(-3px);
+}
+
+.content-img img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 4px solid #8a2be2;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
+  animation: float 4s ease-in-out infinite; /* Efeito flutuante na foto */
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Seção: Sobre Mim */
+.abt-me {
+  padding: 80px 8%;
+  background-color: #110e19; /* Variação de preto arroxeado */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title-abt-me h1 {
+  font-size: 2rem;
+  border-left: 5px solid #8a2be2;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.subtitle-abt-me .subtitle {
+  color: #a855f7;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.txt-abt-me {
+  color: #c3c3c3;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+/* Seção: Projetos (Cards) */
+.project {
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-project {
+  width: 100%; /* Garante que a caixinha ocupe a largura total */
+  display: flex;
+  justify-content: flex-start; /* Alinha o conteúdo interno à esquerda */
+}
+
+.title-project h1 {
+  font-size: 2rem;
+  border-left: 5px solid #8a2be2;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 20px;
+}
+
+.cards li {
+  background-color: #161224;
+  border: 1px solid #2d1b4e;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #e0e0e0;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cards li:hover {
+  border-color: #a855f7;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+  color: #fff;
+}
+
+/* Responsividade Básica (Celular) */
+@media (max-width: 768px) {
+  .Home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 50px;
+    justify-content: center;
+  }
+  header {
+    padding: 20px 5%;
+  }
+  header ul {
+    gap: 15px;
+  }
+  .content-img img {
+    width: 220px;
+    height: 220px;
+  }
+}
