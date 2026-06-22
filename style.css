@@ -183,32 +183,72 @@ main {
   margin-bottom: 10px;
 }
 
+/* Container que segura os 3 cards */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  width: 100%;
-  max-width: 1100px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centraliza os cards na tela */
+    gap: 30px;              /* Espaçamento entre os cards */
+    list-style: none;       /* Remove as bolinhas da lista */
+    padding: 0;
+    flex-wrap: wrap;        /* Garante que fique responsivo em telas menores */
 }
 
-.cards li {
-  background-color: #161224;
-  border: 1px solid #2d1b4e;
-  padding: 40px 30px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  color: #e0e0e0;
-  transition: 0.3s ease;
-  cursor: pointer;
+/* Estilo geral de todos os cards */
+.card-project {
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    
+    /* Centraliza o texto do link no meio do card */
+    display: flex;
+    align-items: flex-end; /* Deixa o texto na parte de baixo */
+    justify-content: center;
+    
+    /* Configuração padrão para as imagens de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* O SEGREDO DO "FLUTUAR": Sombra suave e transição fluida */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cards li:hover {
-  border-color: #a855f7;
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
-  color: #fff;
+/* Estilização dos Links dentro dos cards */
+.card-project a {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /* Gradiente para o texto não sumir na imagem */
+}
+
+/* EFEITO HOVER (Quando passa o mouse) */
+.card-project:hover {
+    transform: translateY(-15px); /* Move o card para cima */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3); /* Deixa a sombra mais forte, dando efeito de altura */
+}
+
+/* ------------------------------------------------------------- */
+/* CONFIGURAÇÃO DAS IMAGENS DE FUNDO (Seus IDs)                  */
+/* ------------------------------------------------------------- */
+
+#card1 {
+    background-image: url('assets/img/mangue-flix.png');
+}
+
+#card2 {
+    background-image: url('assets/img/sempre-nicea.png');
+}
+
+#card3 {
+    background-image: url('assets/img/meu-qrcde.png');
 }
 
 /* Responsividade Básica (Celular) */
